@@ -1,0 +1,12 @@
+D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\bin\Debug\net5.0\WebApp20220514.Shared.deps.json
+D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\bin\Debug\net5.0\WebApp20220514.Shared.dll
+D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\bin\Debug\net5.0\ref\WebApp20220514.Shared.dll
+D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\bin\Debug\net5.0\WebApp20220514.Shared.pdb
+D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.csproj.AssemblyReference.cache
+D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.AssemblyInfoInputs.cache
+D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.AssemblyInfo.cs
+D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.csproj.CoreCompileInputs.cache
+D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.dll
+D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\ref\WebApp20220514.Shared.dll
+D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.pdb

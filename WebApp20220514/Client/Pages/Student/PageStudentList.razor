@@ -1,0 +1,67 @@
+﻿@page "/student"
+@inject HttpClient Http
+@inject IJSRuntime JsRuntime
+
+<h2>Student</h2>
+
+<h2>Section title</h2>
+<span>@message</span>
+<div class="table-responsive">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Student Id</th>
+                <th scope="col">Student Code</th>
+                <th scope="col">Student Name</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (lst != null)
+                {
+                    int count = 0;
+                    foreach (var item in lst)
+                    {
+                        <tr>
+                            <td>@(++count)</td>
+                            <td>@item.StudentId</td>
+                            <td>@item.StudentCode</td>
+                            <td>@item.StudentName</td>
+                            <td><button class="btn btn-danger" @onclick="() => Delete(item.StudentId)">Delete</button></td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+@code {
+    private StudentModel[] lst;
+    private string message;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await List();
+    }
+
+    private async Task List()
+    {
+        lst = await Http.GetFromJsonAsync<StudentModel[]>("Student");
+    }
+
+    private async Task Delete(int id)
+    {
+        var res = await Http.DeleteAsync("Student/" + id);
+        if (res.IsSuccessStatusCode)
+        {
+
+            var isDelete = Convert.ToBoolean(res.Content.ReadAsStringAsync().Result);
+            message = "Delete Successfully";
+            await JsRuntime.InvokeVoidAsync("alert", message);
+            await List();
+        }
+    }
+}

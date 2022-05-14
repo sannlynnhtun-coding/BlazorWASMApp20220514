@@ -1,0 +1,230 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Server\\WebApp20220514.Server.csproj": {}
+  },
+  "projects": {
+    "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj",
+        "projectName": "WebApp20220514.Client",
+        "projectPath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj",
+        "packagesPath": "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\SoeLwinHtun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj": {
+                "projectPath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Components.WebAssembly": {
+              "target": "Package",
+              "version": "[5.0.16, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.DevServer": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.16, )"
+            },
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Runtime.browser-wasm",
+              "version": "[5.0.16, 5.0.16]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "browser-wasm": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Server\\WebApp20220514.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Server\\WebApp20220514.Server.csproj",
+        "projectName": "WebApp20220514.Server",
+        "projectPath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Server\\WebApp20220514.Server.csproj",
+        "packagesPath": "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\SoeLwinHtun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj": {
+                "projectPath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj"
+              },
+              "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj": {
+                "projectPath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "Microsoft.AspNetCore.Components.WebAssembly.Server": {
+              "target": "Package",
+              "version": "[5.0.16, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj",
+        "projectName": "WebApp20220514.Shared",
+        "projectPath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj",
+        "packagesPath": "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\",
+        "outputPath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Shared\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\SoeLwinHtun\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 20.1.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\DevExpress 20.1\\Components\\System\\Components\\Packages": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
