@@ -13,78 +13,85 @@ namespace WebApp20220514.Client.Pages.Student
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Client\_Imports.razor"
+#line 1 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Client\_Imports.razor"
+#line 2 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
 using System.Net.Http.Json;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Client\_Imports.razor"
+#line 3 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Client\_Imports.razor"
+#line 4 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Client\_Imports.razor"
+#line 5 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Client\_Imports.razor"
+#line 6 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Client\_Imports.razor"
+#line 7 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Client\_Imports.razor"
+#line 8 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Client\_Imports.razor"
+#line 9 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
 using WebApp20220514.Client;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Client\_Imports.razor"
+#line 10 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
 using WebApp20220514.Client.Shared;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 11 "D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Client\_Imports.razor"
+#line 11 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
 using WebApp20220514.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 12 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
+using System.Text.Json;
 
 #line default
 #line hidden
@@ -98,10 +105,11 @@ using WebApp20220514.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 41 "D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Client\Pages\Student\PageStudentList.razor"
+#line 68 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\Pages\Student\PageStudentList.razor"
        
     private StudentModel[] lst;
     private string message;
+    private StudentModel item = new StudentModel();
 
     protected override async Task OnInitializedAsync()
     {
@@ -123,6 +131,34 @@ using WebApp20220514.Shared;
             message = "Delete Successfully";
             await JsRuntime.InvokeVoidAsync("alert", message);
             await List();
+        }
+    }
+
+    private async Task Save()
+    {
+        HttpResponseMessage res;
+        if (item.studentId == 0)
+            res = await Http.PostAsJsonAsync("Student", item);
+        else
+            res = await Http.PutAsJsonAsync("Student/" + item.studentId, item);
+        if (res.IsSuccessStatusCode)
+        {
+            ResponseModel model = JsonSerializer.Deserialize<ResponseModel>(res.Content.ReadAsStringAsync().Result);
+            if (model.respCode == EnumRespCode.success)
+            {
+                await JsRuntime.InvokeVoidAsync("alert", model.respDesp);
+                await List();
+            }
+        }
+    }
+
+    private async Task Edit(int id)
+    {
+        var res = await Http.GetAsync("Student/" + id);
+        if (res.IsSuccessStatusCode)
+        {
+            item = JsonSerializer.Deserialize<StudentModel>(res.Content.ReadAsStringAsync().Result);
+            StateHasChanged();
         }
     }
 

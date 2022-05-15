@@ -10,3 +10,15 @@ D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\obj\Debug\net5.0
 D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.dll
 D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\ref\WebApp20220514.Shared.dll
 D:\projects\WebApp20220514\WebApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.pdb
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Shared\bin\Debug\net5.0\WebApp20220514.Shared.deps.json
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Shared\bin\Debug\net5.0\WebApp20220514.Shared.dll
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Shared\bin\Debug\net5.0\ref\WebApp20220514.Shared.dll
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Shared\bin\Debug\net5.0\WebApp20220514.Shared.pdb
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.csproj.AssemblyReference.cache
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.AssemblyInfoInputs.cache
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.AssemblyInfo.cs
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.csproj.CoreCompileInputs.cache
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.dll
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\ref\WebApp20220514.Shared.dll
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Shared\obj\Debug\net5.0\WebApp20220514.Shared.pdb

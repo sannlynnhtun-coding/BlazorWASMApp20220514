@@ -32,8 +32,63 @@ namespace WebApp20220514.Server.Controllers
             }
         }
 
+        [HttpGet("{id:int}")]
+        public async Task<StudentModel> StudentEdit(int id)
+        {
+            using (var connection = new SqlConnection(configuration.GetConnectionString("DbStr")))
+            {
+                var item = await connection.QueryAsync<StudentModel>("select * from tblstudent where StudentId = @StudentId", new { StudentId = id });
+                return item.FirstOrDefault();
+            }
+        }
+
+        [HttpPost]
+        public async Task<ResponseModel> StudentAdd([FromBody] StudentModel studentModel)
+        {
+            using (var connection = new SqlConnection(configuration.GetConnectionString("DbStr")))
+            {
+                string query = @"INSERT INTO [dbo].[TblStudent]
+           ([StudentCode]
+           ,[StudentName])
+     VALUES
+           (@StudentCode
+           ,@StudentName)";
+                var res = await connection.ExecuteAsync(query, new
+                {
+                    StudentName = studentModel.studentName,
+                    StudentCode = studentModel.studentCode
+                });
+                ResponseModel model = new ResponseModel();
+                model.respCode = res == 1 ? EnumRespCode.success : EnumRespCode.error;
+                model.respDesp = model.respCode.ToString();
+                return model;
+            }
+        }
+
+        [HttpPut("{id=int}")]
+        public async Task<ResponseModel> StudentUpdate(int id, [FromBody] StudentModel studentModel)
+        {
+            using (var connection = new SqlConnection(configuration.GetConnectionString("DbStr")))
+            {
+                string query = @"UPDATE [dbo].[TblStudent]
+   SET [StudentCode] = @StudentCode
+      ,[StudentName] =@StudentName
+ WHERE StudentId = @StudentId";
+                var res = await connection.ExecuteAsync(query, new
+                {
+                    StudentId = studentModel.studentId,
+                    StudentCode = studentModel.studentCode,
+                    StudentName = studentModel.studentName
+                });
+                ResponseModel model = new ResponseModel();
+                model.respCode = res == 1 ? EnumRespCode.success : EnumRespCode.error;
+                model.respDesp = model.respCode.ToString();
+                return model;
+            }
+        }
+
         [HttpDelete("{id=int}")]
-        public bool DeleteById(int id)
+        public bool StudentDelete(int id)
         {
             bool res = false;
             try

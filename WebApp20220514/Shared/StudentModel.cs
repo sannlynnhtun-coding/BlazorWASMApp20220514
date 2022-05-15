@@ -8,8 +8,8 @@ namespace WebApp20220514.Shared
 {
     public class StudentModel
     {
-        public int StudentId { get; set; }
-        public string StudentCode { get; set; }
-        public string StudentName { get; set; }
+        public int studentId { get; set; }
+        public string studentCode { get; set; }
+        public string studentName { get; set; }
     }
 }

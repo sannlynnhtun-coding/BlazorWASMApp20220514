@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj",
+      "projectUniqueName": "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj",
       "projectName": "WebApp20220514.Shared",
-      "projectPath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj",
+      "projectPath": "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj",
       "packagesPath": "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Shared\\obj\\",
+      "outputPath": "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SoeLwinHtun\\AppData\\Roaming\\NuGet\\NuGet.Config",

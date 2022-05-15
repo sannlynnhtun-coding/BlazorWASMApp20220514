@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XidZ8P5K55uqUr8WCDxB+XNNEWrJFlY16FAZLiUtwuIlR0f8y3x2BMZ9k2x83yuCsx38AC26CfLzdrAlR8jl1w==",
+  "dgSpecHash": "OO2zfrAj6y2G+cm9C3ZHonbCLHKWPc/hlEt+EPJ/rDlL0fZZFcIi8y2T0hZMTy/NtUqBPzxHppVm9D5Qm9jYaw==",
   "success": true,
-  "projectFilePath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Server\\WebApp20220514.Server.csproj",
+  "projectFilePath": "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Server\\WebApp20220514.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
     "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.16\\microsoft.aspnetcore.authorization.5.0.16.nupkg.sha512",

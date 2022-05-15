@@ -6,6 +6,31 @@
 
 <h2>Section title</h2>
 <span>@message</span>
+<div class="row">
+    <div class="col-6">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Id</label>
+            <input type="text" class="form-control" @bind-value="item.studentId">
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Code</label>
+            <input type="text" class="form-control" @bind-value="item.studentCode">
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Name</label>
+            <input type="text" class="form-control" @bind-value="item.studentName">
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="mb-3">
+            <button class="btn btn-success" @onclick="Save">Save</button>
+        </div>
+    </div>
+</div>
 <div class="table-responsive">
     <table class="table table-striped table-sm">
         <thead>
@@ -14,7 +39,8 @@
                 <th scope="col">Student Id</th>
                 <th scope="col">Student Code</th>
                 <th scope="col">Student Name</th>
-                <th scope="col">Action</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -26,10 +52,11 @@
                     {
                         <tr>
                             <td>@(++count)</td>
-                            <td>@item.StudentId</td>
-                            <td>@item.StudentCode</td>
-                            <td>@item.StudentName</td>
-                            <td><button class="btn btn-danger" @onclick="() => Delete(item.StudentId)">Delete</button></td>
+                            <td>@item.studentId</td>
+                            <td>@item.studentCode</td>
+                            <td>@item.studentName</td>
+                            <td><button class="btn btn-info" @onclick="() => Edit(item.studentId)">Delete</button></td>
+                            <td><button class="btn btn-danger" @onclick="() => Delete(item.studentId)">Delete</button></td>
                         </tr>
                     }
                 }
@@ -41,6 +68,7 @@
 @code {
     private StudentModel[] lst;
     private string message;
+    private StudentModel item = new StudentModel();
 
     protected override async Task OnInitializedAsync()
     {
@@ -62,6 +90,34 @@
             message = "Delete Successfully";
             await JsRuntime.InvokeVoidAsync("alert", message);
             await List();
+        }
+    }
+
+    private async Task Save()
+    {
+        HttpResponseMessage res;
+        if (item.studentId == 0)
+            res = await Http.PostAsJsonAsync("Student", item);
+        else
+            res = await Http.PutAsJsonAsync("Student/" + item.studentId, item);
+        if (res.IsSuccessStatusCode)
+        {
+            ResponseModel model = JsonSerializer.Deserialize<ResponseModel>(res.Content.ReadAsStringAsync().Result);
+            if (model.respCode == EnumRespCode.success)
+            {
+                await JsRuntime.InvokeVoidAsync("alert", model.respDesp);
+                await List();
+            }
+        }
+    }
+
+    private async Task Edit(int id)
+    {
+        var res = await Http.GetAsync("Student/" + id);
+        if (res.IsSuccessStatusCode)
+        {
+            item = JsonSerializer.Deserialize<StudentModel>(res.Content.ReadAsStringAsync().Result);
+            StateHasChanged();
         }
     }
 }

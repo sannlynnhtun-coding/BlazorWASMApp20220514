@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mKMPjvTfKNxeXIUC+MFMBnYRtJlM44fgrhsO7UL7qeiEj38NwZjMdTwnsPymnEVwNZuTvABE3qrjsJKDucgbRA==",
+  "dgSpecHash": "i23WJcNyjzdocNhkcbIOjhGHXzuhqXh33x7hvaC58G5eAS3nHb9SHe+LYuJbeToXeRv/GtGn2KU7Ct9QSC/6rQ==",
   "success": true,
-  "projectFilePath": "D:\\projects\\WebApp20220514\\WebApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj",
+  "projectFilePath": "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
