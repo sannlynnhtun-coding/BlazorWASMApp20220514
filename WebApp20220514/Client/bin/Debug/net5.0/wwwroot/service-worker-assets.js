@@ -1,7 +1,19 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-6C+M8WT1\/M9TJ8sVAVV1aow1kkqYDRuq7FhX1GGzakc=",
+      "hash": "sha256-GKXVffnCZV2JK8DA406WNuXqvmXPmkzGi3xn4OfBLoQ=",
+      "url": "_content\/MudBlazor\/MudBlazor.min.css"
+    },
+    {
+      "hash": "sha256-Mxruz2QDXQpELHtXMmbuVXQuwau0fq\/p68F2jJi\/DKc=",
+      "url": "_content\/MudBlazor\/MudBlazor.min.css.map"
+    },
+    {
+      "hash": "sha256-6odhtPJo8tLzmUFyprVY\/tdayumaLhiUOsFw35I0gV8=",
+      "url": "_content\/MudBlazor\/MudBlazor.min.js"
+    },
+    {
+      "hash": "sha256-VTyaGOVkPw1u8mViSwf1FqnSQQular9oHv4Tx1YcAHc=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -91,6 +103,10 @@
     {
       "hash": "sha256-27V\/xVV3ooJCgmIWm5xyIdgbwXXGJszURW6Wj1f0Wwc=",
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll"
+    },
+    {
+      "hash": "sha256-S\/qMMbqwz6x0Pk2gHik1R6OOX7FkEOaAoYSdM6bCj1U=",
+      "url": "_framework\/MudBlazor.dll"
     },
     {
       "hash": "sha256-\/C5xhI+m3Aqrcjxy\/TauLyqv\/\/5l8WEW3rXFtVlNhy8=",
@@ -793,11 +809,11 @@
       "url": "_framework\/WebApp20220514.Shared.pdb"
     },
     {
-      "hash": "sha256-47nbUJGWVR6q1yFYVRDaU5O9R0VQBXFChlIs3sAdQSA=",
+      "hash": "sha256-2fYIIdeMXABc4pUVJb8EFEqkPieagUhD10W5uM+GayE=",
       "url": "_framework\/WebApp20220514.Client.dll"
     },
     {
-      "hash": "sha256-zpe5yoP6etwNpcAkaLOtsGHWIAK6iJe\/yO918q36p00=",
+      "hash": "sha256-jfQBDvrF7ELyOQE2sfnFZ\/uLMsJPoMbQqyC56Z05jNQ=",
       "url": "_framework\/WebApp20220514.Client.pdb"
     },
     {
@@ -891,6 +907,10 @@
     {
       "hash": "sha256-dViGLwv\/+jLA\/kfDumHCNO9dhv1qPcxnq6i1dkWh3ak=",
       "url": "_framework\/Microsoft.JSInterop.WebAssembly.dll.gz"
+    },
+    {
+      "hash": "sha256-7anN+DcfzRTf+GkeiYUYVfuXT1OjYRYyvxIwDHm3Olk=",
+      "url": "_framework\/MudBlazor.dll.gz"
     },
     {
       "hash": "sha256-cvP9ghwWSAORoFc5MKEFORD1H4rInJakp+UntqR3BI0=",
@@ -1597,7 +1617,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-oCHfjyqL5mAOjRoIWcnUZQiEhs6Hv\/55mKS0Rqa8TYg=",
+      "hash": "sha256-Yy75cvLaKj1k72lPaXcqEx9EKmQs75YTpq2lXDwzCYA=",
       "url": "index.html"
     },
     {
@@ -1797,5 +1817,5 @@
       "url": "WebApp20220514.Client.bundle.scp.css"
     }
   ],
-  "version": "DVQSVlVp"
+  "version": "ehrjQHFu"
 };

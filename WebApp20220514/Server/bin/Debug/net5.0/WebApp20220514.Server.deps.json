@@ -545,6 +545,21 @@
           "System.Security.Principal.Windows": "4.7.0"
         }
       },
+      "MudBlazor/5.2.4": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Components": "5.0.16",
+          "Microsoft.AspNetCore.Components.Web": "5.0.16"
+        },
+        "runtime": {
+          "lib/net5.0/MudBlazor.dll": {
+            "assemblyVersion": "5.2.4.0",
+            "fileVersion": "5.2.4.0"
+          }
+        },
+        "compile": {
+          "lib/net5.0/MudBlazor.dll": {}
+        }
+      },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
         "dependencies": {
           "runtime.win-arm64.runtime.native.System.Data.SqlClient.sni": "4.4.0",
@@ -631,6 +646,7 @@
       "WebApp20220514.Client/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Components.WebAssembly": "5.0.16",
+          "MudBlazor": "5.2.4",
           "System.Net.Http.Json": "5.0.0",
           "WebApp20220514.Shared": "1.0.0"
         },
@@ -2495,6 +2511,13 @@
       "sha512": "sha512-KSrRMb5vNi0CWSGG1++id2ZOs/1QhRqROt+qgbEAdQuGjGrFcl4AOl4/exGPUYz2wUnU42nvJqon1T3U0kPXLA==",
       "path": "microsoft.win32.registry/4.7.0",
       "hashPath": "microsoft.win32.registry.4.7.0.nupkg.sha512"
+    },
+    "MudBlazor/5.2.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ha6xzyr41fjTyK3yh9AXsy2klwHmFS2YqU9ZLsjP/xhCKxyuWkE9meul2ptcHS/LI3sPET4phmGQTA9Oi2TfOA==",
+      "path": "mudblazor/5.2.4",
+      "hashPath": "mudblazor.5.2.4.nupkg.sha512"
     },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "type": "package",

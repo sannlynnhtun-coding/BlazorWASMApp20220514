@@ -87,6 +87,13 @@ using System.Text.Json;
 #line hidden
 #nullable disable
 #nullable restore
+#line 13 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
+using MudBlazor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\Pages\FetchData.razor"
 using WebApp20220514.Shared;
 

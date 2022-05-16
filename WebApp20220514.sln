@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp20220514.Server", "WebApp20220514\Server\WebApp20220514.Server.csproj", "{F64A5763-E4AC-4831-9463-B134E25E6A7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp20220514.Server", "WebApp20220514\Server\WebApp20220514.Server.csproj", "{F64A5763-E4AC-4831-9463-B134E25E6A7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp20220514.Client", "WebApp20220514\Client\WebApp20220514.Client.csproj", "{0B03FC2E-6A97-408B-B868-A4B6A4710314}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp20220514.Client", "WebApp20220514\Client\WebApp20220514.Client.csproj", "{0B03FC2E-6A97-408B-B868-A4B6A4710314}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp20220514.Shared", "WebApp20220514\Shared\WebApp20220514.Shared.csproj", "{47C20084-30DE-4C5A-BF74-9792271980A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp20220514.Shared", "WebApp20220514\Shared\WebApp20220514.Shared.csproj", "{47C20084-30DE-4C5A-BF74-9792271980A0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

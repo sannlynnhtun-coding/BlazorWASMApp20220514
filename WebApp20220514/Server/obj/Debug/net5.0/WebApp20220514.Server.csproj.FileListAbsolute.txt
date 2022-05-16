@@ -132,3 +132,4 @@ D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Server\ob
 D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Server\obj\Debug\net5.0\ref\WebApp20220514.Server.dll
 D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Server\obj\Debug\net5.0\WebApp20220514.Server.pdb
 D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Server\obj\Debug\net5.0\WebApp20220514.Server.genruntimeconfig.cache
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Server\bin\Debug\net5.0\MudBlazor.dll

@@ -1,0 +1,115 @@
+﻿@page "/setup/student"
+@inject HttpClient httpClient
+@inject IJSRuntime JsRuntime
+<MudPaper Class="pa-16 ma-2" Elevation="3">
+    <MudTextField @bind-Value="item.studentId" Label="Student Id" Variant="Variant.Text"></MudTextField>
+    <MudTextField @bind-Value="item.studentCode" Label="Student Code" Variant="Variant.Text"></MudTextField>
+    <MudTextField @bind-Value="item.studentName" Label="Student Name" Variant="Variant.Text"></MudTextField>
+</MudPaper>
+<MudButton Variant="Variant.Filled" Color="Color.Primary" @onclick="Save">Save</MudButton>
+<MudTable Items="@Elements" Dense="@dense" Hover="@hover" Bordered="@bordered" Striped="@striped" Filter="new Func<StudentModel,bool>(FilterFunc1)" @bind-SelectedItem="selectedItem1">
+    <ToolBarContent>
+        <MudText Typo="Typo.h6">Periodic Elements</MudText>
+        <MudSpacer />
+        <MudTextField @bind-Value="searchString1" Placeholder="Search" Adornment="Adornment.Start" AdornmentIcon="@Icons.Material.Filled.Search" IconSize="Size.Medium" Class="mt-0"></MudTextField>
+    </ToolBarContent>
+    <HeaderContent>
+        <MudTh></MudTh>
+        <MudTh></MudTh>
+        <MudTh>Student Id</MudTh>
+        <MudTh>Student Code</MudTh>
+        <MudTh>Student Name</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd DataLabel="Nr">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" @onclick="() => Edit(context.studentId)">Save</MudButton>
+        </MudTd>
+        <MudTd DataLabel="Nr">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" @onclick="() => Delete(context.studentId)">Save</MudButton>
+        </MudTd>
+        <MudTd DataLabel="Nr">@context.studentId</MudTd>
+        <MudTd DataLabel="Sign">@context.studentCode</MudTd>
+        <MudTd DataLabel="Name">@context.studentName</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudTablePager />
+    </PagerContent>
+</MudTable>
+
+<div class="d-flex flex-wrap mt-4">
+    <MudSwitch @bind-Checked="@hover" Color="Color.Primary">Hover</MudSwitch>
+    <MudSwitch @bind-Checked="@dense" Color="Color.Secondary">Dense</MudSwitch>
+    <MudSwitch @bind-Checked="@striped" Color="Color.Tertiary">Striped</MudSwitch>
+    <MudSwitch @bind-Checked="@bordered" Color="Color.Warning">Bordered</MudSwitch>
+    <MudSpacer />
+    <div style="min-width:200px;">
+        <MudText Inline="true" Class="align-self-center">Selected1: @selectedItem1?.studentName</MudText>
+    </div>
+</div>
+
+@code {
+    private bool dense = false;
+    private bool hover = true;
+    private bool striped = false;
+    private bool bordered = false;
+    private string searchString1 = "";
+    private StudentModel selectedItem1 = null;
+    private HashSet<StudentModel> selectedItems = new HashSet<StudentModel>();
+    private StudentModel item = new StudentModel();
+
+    private IEnumerable<StudentModel> Elements = new List<StudentModel>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Elements = await httpClient.GetFromJsonAsync<List<StudentModel>>("student");
+    }
+
+    private bool FilterFunc1(StudentModel element) => FilterFunc(element, searchString1);
+
+    private bool FilterFunc(StudentModel element, string searchString)
+    {
+        if (string.IsNullOrWhiteSpace(searchString))
+            return true;
+        //if (element.Sign.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        //    return true;
+        //if (element.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase))
+        //    return true;
+        //if ($"{element.Number} {element.Position} {element.Molar}".Contains(searchString))
+        //    return true;
+        return false;
+    }
+
+    private async Task Save()
+    {
+        HttpResponseMessage res;
+        if (item.studentId == 0)
+            res = await httpClient.PostAsJsonAsync("Student", item);
+        else
+            res = await httpClient.PutAsJsonAsync("Student/" + item.studentId, item);
+        if (res.IsSuccessStatusCode)
+        {
+            ResponseModel model = JsonSerializer.Deserialize<ResponseModel>(res.Content.ReadAsStringAsync().Result);
+            if (model.respCode == EnumRespCode.success)
+            {
+                await JsRuntime.InvokeVoidAsync("alert", model.respDesp);
+                await List();
+            }
+        }
+    }
+
+    private async Task List()
+    {
+        Elements = await httpClient.GetFromJsonAsync<StudentModel[]>("Student");
+    }
+
+    private async Task Edit(int id)
+    {
+        item = await httpClient.GetFromJsonAsync<StudentModel>("Student/" + id);
+    }
+
+    private async Task Delete(int id)
+    {
+        await httpClient.DeleteAsync("Student/" + id);
+        await List();
+    }
+}

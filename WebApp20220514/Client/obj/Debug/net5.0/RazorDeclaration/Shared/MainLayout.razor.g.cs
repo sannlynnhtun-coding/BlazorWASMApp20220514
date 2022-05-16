@@ -96,6 +96,13 @@ using System.Text.Json;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 13 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\_Imports.razor"
+using MudBlazor;
+
+#line default
+#line hidden
+#nullable disable
     public partial class MainLayout : LayoutComponentBase
     {
         #pragma warning disable 1998
@@ -103,6 +110,21 @@ using System.Text.Json;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 27 "D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\Shared\MainLayout.razor"
+      
+    bool open = false;
+    bool dense = false;
+    DrawerClipMode clipMode = DrawerClipMode.Never;
+
+    void ToggleDrawer()
+    {
+        open = !open;
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591

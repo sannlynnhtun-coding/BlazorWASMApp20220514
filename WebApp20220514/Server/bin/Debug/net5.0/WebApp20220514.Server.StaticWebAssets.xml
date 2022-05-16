@@ -2,4 +2,5 @@
   <ContentRoot BasePath="/" Path="D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\bin\Debug\net5.0\wwwroot\" />
   <ContentRoot BasePath="/" Path="D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\obj\Debug\net5.0\scopedcss\bundle\" />
   <ContentRoot BasePath="/" Path="D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\wwwroot\" />
+  <ContentRoot BasePath="_content/MudBlazor" Path="C:\Users\SoeLwinHtun\.nuget\packages\mudblazor\5.2.4\build\..\staticwebassets\" />
 </StaticWebAssets>

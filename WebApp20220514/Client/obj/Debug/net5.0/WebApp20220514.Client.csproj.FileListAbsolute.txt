@@ -1282,3 +1282,8 @@ D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\ob
 D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\obj\Debug\net5.0\WebApp20220514.Client.pdb
 D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\obj\Debug\net5.0\serviceworkers\wwwroot\service-worker.js
 D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\obj\Debug\net5.0\service-worker-assets.js
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\bin\Debug\net5.0\wwwroot\_framework\MudBlazor.dll.gz
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\bin\Debug\net5.0\wwwroot\_framework\MudBlazor.dll
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\obj\Debug\net5.0\build-gz\+IkkYpCo.gz
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Student\PageStudent.razor.g.cs
+D:\projects\BlazorWASMApp20220514\BlazorWASMApp20220514\WebApp20220514\Client\obj\Debug\net5.0\Razor\Pages\Student\PageStudent.razor.g.cs
