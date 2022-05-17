@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GkAWhbhx0PBhaHb/v+cpj8z6IKxeaaiH+M+Nb9gLoYfzzRWL5qwSUkNJm9namdLxubWJrC3w2Sj8XwI9G1ekYA==",
+  "dgSpecHash": "vKi32PZR4yzSRFbceL/T3+l28mZsVAIjIis9MqjSnxtEqMqqiOGDW7KKU4g70MMCbHQO4P0vtaxzT7ZvYDWYcA==",
   "success": true,
-  "projectFilePath": "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj",
+  "projectFilePath": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\microsoft.aspnetcore.authorization\\5.0.16\\microsoft.aspnetcore.authorization.5.0.16.nupkg.sha512",
     "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\microsoft.aspnetcore.components\\5.0.16\\microsoft.aspnetcore.components.5.0.16.nupkg.sha512",

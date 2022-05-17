@@ -1392,11 +1392,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Server\\WebApp20220514.Server.csproj",
+      "projectUniqueName": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Server\\WebApp20220514.Server.csproj",
       "projectName": "WebApp20220514.Server",
-      "projectPath": "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Server\\WebApp20220514.Server.csproj",
+      "projectPath": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Server\\WebApp20220514.Server.csproj",
       "packagesPath": "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Server\\obj\\",
+      "outputPath": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SoeLwinHtun\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1415,11 +1415,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj": {
-              "projectPath": "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj"
+            "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj": {
+              "projectPath": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj"
             },
-            "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj": {
-              "projectPath": "D:\\projects\\BlazorWASMApp20220514\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj"
+            "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj": {
+              "projectPath": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj"
             }
           }
         }
