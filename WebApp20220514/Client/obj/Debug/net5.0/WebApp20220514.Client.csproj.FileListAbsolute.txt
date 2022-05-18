@@ -1934,3 +1934,5 @@ C:\Users\SoeLwinHtun\Source\Repos\BlazorWASMApp20220514\WebApp20220514\Client\ob
 C:\Users\SoeLwinHtun\Source\Repos\BlazorWASMApp20220514\WebApp20220514\Client\obj\Debug\net5.0\WebApp20220514.Client.pdb
 C:\Users\SoeLwinHtun\Source\Repos\BlazorWASMApp20220514\WebApp20220514\Client\obj\Debug\net5.0\serviceworkers\wwwroot\service-worker.js
 C:\Users\SoeLwinHtun\Source\Repos\BlazorWASMApp20220514\WebApp20220514\Client\obj\Debug\net5.0\service-worker-assets.js
+C:\Users\SoeLwinHtun\Source\Repos\BlazorWASMApp20220514\WebApp20220514\Client\obj\Debug\net5.0\RazorDeclaration\Pages\Sale\PageSale.razor.g.cs
+C:\Users\SoeLwinHtun\Source\Repos\BlazorWASMApp20220514\WebApp20220514\Client\obj\Debug\net5.0\Razor\Pages\Sale\PageSale.razor.g.cs

@@ -8,13 +8,25 @@
         <MudIconButton Icon="@Icons.Custom.Brands.GitHub" Color="Color.Inherit" Link="https://github.com/MudBlazor/MudBlazor" Target="_blank" />
     </MudAppBar>
     <MudDrawer @bind-Open="@open" ClipMode="clipMode" Elevation="1" Variant="@DrawerVariant.Responsive">
-        <MudDrawerHeader>
+        @*<MudDrawerHeader>
             <MudText Typo="Typo.h6">My App</MudText>
-        </MudDrawerHeader>
-        <MudNavMenu>
-            <MudNavLink Match="NavLinkMatch.All" Href="/student">Student</MudNavLink>
-            <MudNavLink Match="NavLinkMatch.All" Href="/setup/student">Student</MudNavLink>
-            <MudNavLink Match="NavLinkMatch.All">Community</MudNavLink>
+        </MudDrawerHeader>*@
+        @*<MudNavMenu>
+                <MudNavLink Match="NavLinkMatch.All" Href="/student">Student</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Href="/setup/student">Student Setup</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All" Href="/sale">Sale</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.All">Community</MudNavLink>
+            </MudNavMenu>*@
+        <MudNavMenu Class="mud-width-full">
+            <MudText Typo="Typo.h6" Class="px-4">Material</MudText>
+            <MudText Typo="Typo.body2" Class="px-4 mud-text-secondary">Icons</MudText>
+            <MudDivider Class="my-2" />
+            <MudNavLink Match="NavLinkMatch.All" Href="/" Icon="@Icons.Filled.Dashboard">Home</MudNavLink>
+            <MudNavGroup Title="Setup" Icon="@Icons.Filled.Settings" Expanded="true">
+                <MudNavLink Match="NavLinkMatch.Prefix" Href="/setup/student" Icon="@Icons.Filled.People" IconColor="Color.Success">Student Setup</MudNavLink>
+                <MudNavLink Match="NavLinkMatch.Prefix" Href="/student" Icon="@Icons.Filled.People" IconColor="Color.Info">Student</MudNavLink>
+            </MudNavGroup>
+            <MudNavLink Match="NavLinkMatch.Prefix" Href="/sale" Icon="@Icons.Filled.Storage">Sale</MudNavLink>
         </MudNavMenu>
     </MudDrawer>
     <MudMainContent Class="pt-16 px-16">
@@ -25,7 +37,7 @@
 </MudLayout>
 
 @code{
-    bool open = false;
+    bool open = true;
     bool dense = false;
     DrawerClipMode clipMode = DrawerClipMode.Never;
 

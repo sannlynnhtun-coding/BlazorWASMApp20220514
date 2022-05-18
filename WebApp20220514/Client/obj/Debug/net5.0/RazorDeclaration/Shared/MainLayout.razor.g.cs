@@ -111,9 +111,9 @@ using MudBlazor;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 27 "C:\Users\SoeLwinHtun\Source\Repos\BlazorWASMApp20220514\WebApp20220514\Client\Shared\MainLayout.razor"
+#line 39 "C:\Users\SoeLwinHtun\Source\Repos\BlazorWASMApp20220514\WebApp20220514\Client\Shared\MainLayout.razor"
       
-    bool open = false;
+    bool open = true;
     bool dense = false;
     DrawerClipMode clipMode = DrawerClipMode.Never;
 
