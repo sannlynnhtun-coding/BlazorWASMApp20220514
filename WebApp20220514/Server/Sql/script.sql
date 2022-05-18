@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[TblStudent](
+	[StudentId] [int] IDENTITY(1,1) NOT NULL,
+	[StudentCode] [nvarchar](50) NULL,
+	[StudentName] [nvarchar](250) NULL,
+ CONSTRAINT [PK_TblStudent] PRIMARY KEY CLUSTERED 
+(
+	[StudentId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+CREATE TABLE [dbo].[TblSale](
+	[SaleId] [int] IDENTITY(1,1) NOT NULL,
+	[ProductName] [nvarchar](50) NOT NULL,
+	[Qty] [int] NOT NULL,
+	[Price] [decimal](20, 2) NOT NULL,
+	[SaleDate] [datetime] NOT NULL,
+	[Country] [varchar](50) NOT NULL,
+	[StaffName] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_TblSale] PRIMARY KEY CLUSTERED 
+(
+	[SaleId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
