@@ -1,0 +1,73 @@
+﻿@page "/sale/add"
+@*@inject NavigationManager NavigationManager*@
+@inject IInjectService InjectService
+
+<h3>PageSaleAdd</h3>
+
+<div class="row">
+    <div class="col">
+        <label class="form-label">Product Name</label>
+        <input type="text" class="form-control" @bind-value="model.productName">
+    </div>
+    <div class="col">
+        <label class="form-label">Price</label>
+        <input type="text" class="form-control" @bind-value="model.price">
+    </div>
+    <div class="col">
+        <label class="form-label">Qty</label>
+        <input type="text" class="form-control" @bind-value="model.qty">
+    </div>
+    <div class="col">
+        <label class="form-label">Sale Date</label>
+        <input type="text" id="SaleDate" class="form-control" @bind-value="model.saleDate">
+    </div>
+    <div class="col">
+        <label class="form-label">Country</label>
+        <select class="form-select" aria-label="Choose Staff Name" @bind="model.country">
+            <option value="Myanmar">Myanmar</option>
+            <option value="Thailand">Thailand</option>
+        </select>
+    </div>
+    <div class="col">
+        <label class="form-label">Staff Name</label>
+        @*<input type="text" class="form-control" @bind-value="model.staffName">*@
+        <select class="form-select" aria-label="Choose Staff Name" @onchange="ChangeStaffName">
+            <option value="Sann Lynn Htun">Sann Lynn Htun</option>
+            <option value="Mg Mg">Mg Mg</option>
+            <option value="Kyaw Kyaw">Kyaw Kyaw</option>
+        </select>
+    </div>
+</div>
+
+
+<button class="btn btn-success" @onclick="Save">Save</button>
+<button class="btn btn-info" @onclick="Back">Back</button>
+
+@code {
+    private SaleModel model = new SaleModel();
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await InjectService.DatePicker("#SaleDate");
+        }
+    }
+
+    private void Back()
+    {
+        InjectService.Go("/sale");
+        //NavigationManager.NavigateTo("/sale");
+    }
+
+    void ChangeStaffName(ChangeEventArgs e)
+    {
+        model.staffName = e.Value.ToString();
+        e.Value.ToString().ToConsole();
+    }
+
+    void Save()
+    {
+        InjectService.ShowMsg("Saving Successful", "/sale");
+    }
+}

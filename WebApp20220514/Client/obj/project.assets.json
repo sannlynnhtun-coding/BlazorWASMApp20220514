@@ -1237,11 +1237,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj",
+      "projectUniqueName": "C:\\Users\\SoeLwinHtun\\Desktop\\slh\\proj\\BlazorWASMApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj",
       "projectName": "WebApp20220514.Client",
-      "projectPath": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj",
+      "projectPath": "C:\\Users\\SoeLwinHtun\\Desktop\\slh\\proj\\BlazorWASMApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj",
       "packagesPath": "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Client\\obj\\",
+      "outputPath": "C:\\Users\\SoeLwinHtun\\Desktop\\slh\\proj\\BlazorWASMApp20220514\\WebApp20220514\\Client\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SoeLwinHtun\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -1260,8 +1260,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj": {
-              "projectPath": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj"
+            "C:\\Users\\SoeLwinHtun\\Desktop\\slh\\proj\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj": {
+              "projectPath": "C:\\Users\\SoeLwinHtun\\Desktop\\slh\\proj\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj"
             }
           }
         }

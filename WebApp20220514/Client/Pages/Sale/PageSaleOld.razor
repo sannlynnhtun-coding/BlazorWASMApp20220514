@@ -1,0 +1,70 @@
+﻿@page "/sale-old"
+@inject HttpClient httpClient
+@*@foreach (var item in lst)
+    {
+
+    }*@
+<div>@msg</div>
+<MudTable Items="@lst" Hover="true" Breakpoint="Breakpoint.Sm">
+    <HeaderContent>
+        <MudTh></MudTh>
+        @*<MudTh>Sale Id</MudTh>*@
+        <MudTh>Product Name</MudTh>
+        <MudTh>Price</MudTh>
+        <MudTh>Qty</MudTh>
+        <MudTh>Amount</MudTh>
+        <MudTh>Country</MudTh>
+        <MudTh>Staff Name</MudTh>
+        <MudTh>Sale Date</MudTh>
+    </HeaderContent>
+    <RowTemplate>
+        <MudTd>
+            <MudButton Variant="Variant.Outlined" Color="Color.Primary" @onclick="() => Detail(context)">
+                Edit
+            </MudButton>
+        </MudTd>
+        @*<MudTd>@context.saleId</MudTd>*@
+        <MudTd>@context.productName</MudTd>
+        <MudTd>@context.price</MudTd>
+        <MudTd>@context.qty</MudTd>
+        <MudTd>@(context.qty * context.price)</MudTd>
+        <MudTd>@context.country</MudTd>
+        <MudTd>@context.staffName</MudTd>
+        <MudTd>@context.saleDate.ToString("dd-MM-yyyy hh:mm tt")</MudTd>
+    </RowTemplate>
+    <PagerContent>
+        <MudPagination SelectedChanged="PageChanged" Count="@totalPageNo" Class="pa-4" />
+    </PagerContent>
+</MudTable>
+@code {
+    private IEnumerable<SaleModel> lst = new List<SaleModel>();
+    private int totalPageNo;
+    private int rowPerPage = 3;
+    private string msg = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+
+    private async Task LoadData(int pageNo = 1)
+    {
+        string url = $"api/Sale/{pageNo}/{rowPerPage}";
+        var model = await httpClient.GetFromJsonAsync<SaleResModel>(url);
+        lst = model.lstSale;
+        totalPageNo = model.totalPageNo;
+    }
+
+    private async Task PageChanged(int i)
+    {
+        await LoadData(i);
+    }
+
+    private async Task Detail(SaleModel item)
+    {
+        string url = $"api/Sale/{item.saleId}";
+        var model = await httpClient.GetFromJsonAsync<SaleResModel>(url);
+        msg = model.itemSale.productName;
+        StateHasChanged();
+    }
+}

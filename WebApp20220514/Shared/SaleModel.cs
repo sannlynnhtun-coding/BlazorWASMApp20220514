@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,8 @@ namespace WebApp20220514.Shared
         public string productName { get; set; }
         public int qty { get; set; }
         public decimal price { get; set; }
+        [NotMapped]
+        public decimal amount { get { return price * qty; } }
         public DateTime saleDate { get; set; }
         public string country { get; set; }
         public string staffName { get; set; }

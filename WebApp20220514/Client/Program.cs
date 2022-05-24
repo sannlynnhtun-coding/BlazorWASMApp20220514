@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using WebApp20220514.Client.Services;
 
 namespace WebApp20220514.Client
 {
@@ -22,6 +23,8 @@ namespace WebApp20220514.Client
 
             //builder.Services.AddBootstrapBlazor();
             builder.Services.AddMudServices();
+
+            builder.Services.AddScoped<IInjectService, InjectService>();
 
             await builder.Build().RunAsync();
         }

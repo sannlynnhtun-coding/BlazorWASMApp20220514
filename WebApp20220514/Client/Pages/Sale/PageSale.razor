@@ -1,70 +1,93 @@
 ﻿@page "/sale"
 @inject HttpClient httpClient
-@*@foreach (var item in lst)
-    {
+@inject IInjectService InjectService
+@*@inject NavigationManager NavigationManager*@
+@*<MudTable Items="@lst" Hover="true" SortLabel="Sort By">
+        <HeaderContent>
+            <MudTh><MudTableSortLabel SortBy="new Func<SaleModel, object>(x=>x.productName)">Product Name</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel Enabled="@enabled" SortBy="new Func<SaleModel, object>(x=>x.price)">Price</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel InitialDirection="SortDirection.Ascending" SortBy="new Func<SaleModel, object>(x=>x.qty)">Qty</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<SaleModel, object>(x=>x.amount)">Amount</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<SaleModel, object>(x=>x.saleDate)">Sale Date</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<SaleModel, object>(x=>x.country)">Country</MudTableSortLabel></MudTh>
+            <MudTh><MudTableSortLabel SortBy="new Func<SaleModel, object>(x=>x.staffName)">Staff Name</MudTableSortLabel></MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Product Name">@context.productName</MudTd>
+            <MudTd DataLabel="Price">@context.price</MudTd>
+            <MudTd DataLabel="Qty">@context.qty</MudTd>
+            <MudTd DataLabel="Amount">@(context.price * context.qty)</MudTd>
+            <MudTd DataLabel="Sale Date">@context.saleDate.ToString("dd-MM-yyyy hh:mm tt")</MudTd>
+            <MudTd DataLabel="Country">@context.country</MudTd>
+            <MudTd DataLabel="Staff Name">@context.staffName</MudTd>
+        </RowTemplate>
+        <PagerContent>
+            <MudTablePager PageSizeOptions="new int[]{50, 100}" />
+        </PagerContent>
+    </MudTable>*@
+<button class="btn btn-info" @onclick="New">New</button>
+@if (lst == null)
+{
+    <div>Loading Data...</div>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Sr.</th>
+                        <th>Product Name</th>
+                        <th>Qty</th>
+                        <th>Amount</th>
+                        <th>Sale Date</th>
+                        <th>Country</th>
+                        <th>Staff Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (int i = 0; i < lst.Count; i++)
+                    {
+                        var item = lst[i];
+                        <tr>
+                            <td>@(i + 1)</td>
+                            <td>@(item.productName)</td>
+                            <td>@(item.price)</td>
+                            <td>@(item.qty)</td>
+                            <td>@(item.amount * item.qty)</td>
+                            <td>@(item.saleDate.ToString("dd-MM-yyyy hh:mm tt"))</td>
+                            <td>@(item.country)</td>
+                            <td>@(item.staffName)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+}
 
-    }*@
-<div>@msg</div>
-<MudTable Items="@lst" Hover="true" Breakpoint="Breakpoint.Sm">
-    <HeaderContent>
-        <MudTh></MudTh>
-        @*<MudTh>Sale Id</MudTh>*@
-        <MudTh>Product Name</MudTh>
-        <MudTh>Price</MudTh>
-        <MudTh>Qty</MudTh>
-        <MudTh>Amount</MudTh>
-        <MudTh>Country</MudTh>
-        <MudTh>Staff Name</MudTh>
-        <MudTh>Sale Date</MudTh>
-    </HeaderContent>
-    <RowTemplate>
-        <MudTd>
-            <MudButton Variant="Variant.Outlined" Color="Color.Primary" @onclick="() => Detail(context)">
-                Edit
-            </MudButton>
-        </MudTd>
-        @*<MudTd>@context.saleId</MudTd>*@
-        <MudTd>@context.productName</MudTd>
-        <MudTd>@context.price</MudTd>
-        <MudTd>@context.qty</MudTd>
-        <MudTd>@(context.qty * context.price)</MudTd>
-        <MudTd>@context.country</MudTd>
-        <MudTd>@context.staffName</MudTd>
-        <MudTd>@context.saleDate.ToString("dd-MM-yyyy hh:mm tt")</MudTd>
-    </RowTemplate>
-    <PagerContent>
-        <MudPagination SelectedChanged="PageChanged" Count="@totalPageNo" Class="pa-4" />
-    </PagerContent>
-</MudTable>
+@*<MudSwitch @bind-Checked="enabled" Color="Color.Info">Enable sorting on the Sign Column</MudSwitch>*@
+
 @code {
-    private IEnumerable<SaleModel> lst = new List<SaleModel>();
-    private int totalPageNo;
-    private int rowPerPage = 3;
-    private string msg = "";
+    private bool enabled = true;
+    private SaleResModel model;
+    private List<SaleModel> lst;
 
     protected override async Task OnInitializedAsync()
     {
-        await LoadData();
+        string url = ApiUrl.Sale + "/1/10";
+        url.ToConsole();
+        model = await httpClient.GetFromJsonAsync<SaleResModel>(url);
+        JsonSerializer.Serialize(model).ToConsole();
+        if (model != null && model.response != null && model.response.respCode == "000")
+        {
+            lst = model.lstSale;
+        }
     }
 
-    private async Task LoadData(int pageNo = 1)
+    private void New()
     {
-        string url = $"api/Sale/{pageNo}/{rowPerPage}";
-        var model = await httpClient.GetFromJsonAsync<SaleResModel>(url);
-        lst = model.lstSale;
-        totalPageNo = model.totalPageNo;
-    }
-
-    private async Task PageChanged(int i)
-    {
-        await LoadData(i);
-    }
-
-    private async Task Detail(SaleModel item)
-    {
-        string url = $"api/Sale/{item.saleId}";
-        var model = await httpClient.GetFromJsonAsync<SaleResModel>(url);
-        msg = model.itemSale.productName;
-        StateHasChanged();
+        InjectService.Go("/sale/add");
     }
 }

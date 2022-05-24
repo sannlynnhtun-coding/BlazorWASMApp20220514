@@ -1,0 +1,30 @@
+﻿@inject IInjectService InjectService
+<MudDialog>
+    <DialogContent>
+        @msg
+    </DialogContent>
+    <DialogActions>
+        <MudButton Color="Color.Primary" OnClick="Submit">Ok</MudButton>
+    </DialogActions>
+</MudDialog>
+
+@code {
+    [CascadingParameter] MudDialogInstance MudDialog { get; set; }
+
+    [Parameter] public string msg { get; set; }
+    [Parameter] public string url { get; set; }
+
+    void Submit()
+    {
+        if(url != null && !string.IsNullOrEmpty(url))
+            InjectService.Go(url);
+        MudDialog.Close(DialogResult.Ok(true));
+    }
+    //void Cancel() => MudDialog.Cancel();
+}
+
+
+
+@code {
+
+}

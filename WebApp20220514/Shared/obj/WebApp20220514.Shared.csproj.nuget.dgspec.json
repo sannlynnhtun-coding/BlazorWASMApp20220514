@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj": {}
+    "C:\\Users\\SoeLwinHtun\\Desktop\\slh\\proj\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj": {}
   },
   "projects": {
-    "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj": {
+    "C:\\Users\\SoeLwinHtun\\Desktop\\slh\\proj\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\SoeLwinHtun\\Desktop\\slh\\proj\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj",
         "projectName": "WebApp20220514.Shared",
-        "projectPath": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj",
+        "projectPath": "C:\\Users\\SoeLwinHtun\\Desktop\\slh\\proj\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\WebApp20220514.Shared.csproj",
         "packagesPath": "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\SoeLwinHtun\\Source\\Repos\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\SoeLwinHtun\\Desktop\\slh\\proj\\BlazorWASMApp20220514\\WebApp20220514\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SoeLwinHtun\\AppData\\Roaming\\NuGet\\NuGet.Config",

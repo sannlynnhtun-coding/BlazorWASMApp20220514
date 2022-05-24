@@ -23,7 +23,7 @@ namespace WebApp20220514.Server.Controllers
 
         // List
         [HttpGet("{pageNo:int}/{rowPerPage:int}")]
-        public SaleResModel SaleList(int pageNo, int rowPerPage)
+        public SaleResModel SaleList(int pageNo = 1, int rowPerPage = 10)
         {
             SaleResModel model = new SaleResModel();
             try

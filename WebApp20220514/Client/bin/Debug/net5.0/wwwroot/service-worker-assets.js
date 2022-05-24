@@ -13,7 +13,7 @@
       "url": "_content\/MudBlazor\/MudBlazor.min.js"
     },
     {
-      "hash": "sha256-By+tImaBD0CUcHI9SJR5ajNbxEh8ngo5r5GOIwtxuDE=",
+      "hash": "sha256-216L8utSx\/RFv0n7O1Jj4K9ENR9m++Jp485xdHscklM=",
       "url": "_framework\/blazor.boot.json"
     },
     {
@@ -801,19 +801,19 @@
       "url": "_framework\/dotnet.5.0.16.js"
     },
     {
-      "hash": "sha256-yaYtmcXo18pHYG+sUz8feabSBKeu3LiuvgcA9kM0nFc=",
+      "hash": "sha256-6etFMaJT+lUtArQlxZYgCn8Biyia4nu\/EYqLdfPiJ5U=",
       "url": "_framework\/WebApp20220514.Shared.dll"
     },
     {
-      "hash": "sha256-9XWuX1icBQUoMKAhM7QkXn3tEIsDbthbGklSXWuwcbw=",
+      "hash": "sha256-7HQQid8EIJwQnEjoV5MxnBpjBjAnQV+2tcih1Q3e8Uc=",
       "url": "_framework\/WebApp20220514.Shared.pdb"
     },
     {
-      "hash": "sha256-oJRSIiJlatIEEt3kCEtoV4Avsjn6Dsysc0qXJYX8y3o=",
+      "hash": "sha256-\/sKpbyzH5xTLg5dbgWSdlLDpqY11MhG36F1T7pk9fDI=",
       "url": "_framework\/WebApp20220514.Client.dll"
     },
     {
-      "hash": "sha256-hLL3Sj6eDYNmaavTZnlKq7h+TLuXaXSOOzsBOaW2rbY=",
+      "hash": "sha256-tHpV+v94KMzsvExHuVFXaNXpSbBbmH41du2xrcgOZyA=",
       "url": "_framework\/WebApp20220514.Client.pdb"
     },
     {
@@ -1605,7 +1605,7 @@
       "url": "_framework\/dotnet.5.0.16.js.gz"
     },
     {
-      "hash": "sha256-RWkvxDKno8NzWzh4iTzoRemSRZ2wPD9c9UELX+zMBvY=",
+      "hash": "sha256-2C9uwIHMyS\/f6DJdEUvW+5oh7Ir2uUWcLFY5loOusw0=",
       "url": "_framework\/WebApp20220514.Shared.dll.gz"
     },
     {
@@ -1617,7 +1617,7 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-Yy75cvLaKj1k72lPaXcqEx9EKmQs75YTpq2lXDwzCYA=",
+      "hash": "sha256-P5P16PWzlsVRNfbVTZSjsEnyHt09QzMIqt9BT5Uwcko=",
       "url": "index.html"
     },
     {
@@ -1797,12 +1797,44 @@
       "url": "lib\/bootstrap-5.1.3\/js\/bootstrap.min.js.map"
     },
     {
+      "hash": "sha256-NSKO7hE0As7tKusk75QiSmdDW2Z5ylfKNdVf6YHrVpk=",
+      "url": "lib\/custom.js"
+    },
+    {
       "hash": "sha256-yHBcn+Uv46GNkr\/jdTnYMXYrt5+EE4JZp9niGC+jeuo=",
       "url": "lib\/dashboard.css"
     },
     {
       "hash": "sha256-Cd\/U0a1yVww2DQ+QDjcXtrExSzXGf62WRNVOJQ4ewbk=",
       "url": "lib\/dashboard.rtl.css"
+    },
+    {
+      "hash": "sha256-kbscU9L5iCF8Ruc1IxyqKVfd2NvItdY7bkrS8K9IIJ0=",
+      "url": "lib\/datepicker-1.0.10\/datepicker.common.js"
+    },
+    {
+      "hash": "sha256-FsP0u73eKPdmaS3ICjZ8RUxTqOJwRrj8PIoTrO6OoHY=",
+      "url": "lib\/datepicker-1.0.10\/datepicker.css"
+    },
+    {
+      "hash": "sha256-R3wDctCOsoc0CZ3X6YQcgluF3Xww11c7PZc39YjKGt4=",
+      "url": "lib\/datepicker-1.0.10\/datepicker.esm.js"
+    },
+    {
+      "hash": "sha256-AcJRSNXs2zaVfKnC1XQhyiQABLercBf0QGAbFObEH64=",
+      "url": "lib\/datepicker-1.0.10\/datepicker.js"
+    },
+    {
+      "hash": "sha256-N6j2rzNk9osAcPtO8v7Spj1SnvPurNnxmkhPojQzauo=",
+      "url": "lib\/datepicker-1.0.10\/datepicker.min.css"
+    },
+    {
+      "hash": "sha256-MvjVHmyzC93CDLIEY5T+hoS659vsnR0nw9q9+CMJDWE=",
+      "url": "lib\/datepicker-1.0.10\/datepicker.min.js"
+    },
+    {
+      "hash": "sha256-\/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej\/m4=",
+      "url": "lib\/jQuery\/jquery-3.6.0.min.js"
     },
     {
       "hash": "sha256-foT5JiFRMo1bP6lziVj4so+HmswU\/3Mo02+TmKTXY5Q=",
@@ -1817,5 +1849,5 @@
       "url": "WebApp20220514.Client.bundle.scp.css"
     }
   ],
-  "version": "N\/GNgACs"
+  "version": "UHX6adCF"
 };
