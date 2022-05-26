@@ -269,3 +269,7 @@ C:\Users\SoeLwinHtun\Desktop\slh\proj\BlazorWASMApp20220514\WebApp20220514\Serve
 C:\Users\SoeLwinHtun\Desktop\slh\proj\BlazorWASMApp20220514\WebApp20220514\Server\obj\Debug\net5.0\ref\WebApp20220514.Server.dll
 C:\Users\SoeLwinHtun\Desktop\slh\proj\BlazorWASMApp20220514\WebApp20220514\Server\obj\Debug\net5.0\WebApp20220514.Server.pdb
 C:\Users\SoeLwinHtun\Desktop\slh\proj\BlazorWASMApp20220514\WebApp20220514\Server\obj\Debug\net5.0\WebApp20220514.Server.genruntimeconfig.cache
+C:\Users\SoeLwinHtun\Desktop\slh\proj\BlazorWASMApp20220514\WebApp20220514\Server\bin\Debug\net5.0\Serilog.dll
+C:\Users\SoeLwinHtun\Desktop\slh\proj\BlazorWASMApp20220514\WebApp20220514\Server\bin\Debug\net5.0\Serilog.Sinks.Console.dll
+C:\Users\SoeLwinHtun\Desktop\slh\proj\BlazorWASMApp20220514\WebApp20220514\Server\bin\Debug\net5.0\Newtonsoft.Json.dll
+C:\Users\SoeLwinHtun\Desktop\slh\proj\BlazorWASMApp20220514\WebApp20220514\Server\bin\Debug\net5.0\Serilog.Sinks.File.dll

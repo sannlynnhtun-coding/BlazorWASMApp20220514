@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Newtonsoft.Json;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -60,6 +62,7 @@ namespace WebApp20220514.Server.Controllers
             {
                 model.response = getError(ex);
             }
+            Log.Information(JsonConvert.SerializeObject(model, Formatting.Indented));
             return model;
         }
 

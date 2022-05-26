@@ -5,7 +5,9 @@ using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 using System;
+using System.IO;
 using System.Linq;
 
 namespace WebApp20220514.Server
@@ -34,8 +36,22 @@ namespace WebApp20220514.Server
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IConfiguration configuration)
         {
+            //Log.Logger = new LoggerConfiguration()
+            //    .WriteTo.Console()
+            //    .CreateLogger();
+
+            //string filePath = "logs/WebApp20220514.Server.txt";
+            string filePath = Path.Combine(configuration.GetSection("LogFolderPath").Value, "WebApp20220514.Server.txt");
+            Log.Logger = new LoggerConfiguration()
+               //.MinimumLevel.Debug()
+               .WriteTo.Console()
+               .WriteTo.File(filePath, rollingInterval: RollingInterval.Day)
+               .CreateLogger();
+
+            Log.Information("Hello, Serilog!");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -48,8 +64,14 @@ namespace WebApp20220514.Server
                 app.UseHsts();
             }
 
+            Log.Information("Start, UseHttpsRedirection!");
             app.UseHttpsRedirection();
+            Log.Information("Finish, UseHttpsRedirection!");
+
+            Log.Information("Start, UseHttpsRedirection!");
             app.UseBlazorFrameworkFiles();
+            Log.Information("Finish, UseBlazorFrameworkFiles!");
+
             app.UseStaticFiles();
 
             app.UseSession();
