@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Serilog;
 using System;
@@ -17,10 +18,12 @@ namespace WebApp20220514.Server.Controllers
     [ApiController]
     public class SaleController : ControllerBase
     {
+        private readonly ILogger<SaleController> _logger;
         private readonly IConfiguration _configuration;
-        public SaleController(IConfiguration configuration)
+        public SaleController(IConfiguration configuration, ILogger<SaleController> logger)
         {
             _configuration = configuration;
+            _logger = logger;
         }
 
         // List
@@ -30,13 +33,19 @@ namespace WebApp20220514.Server.Controllers
             SaleResModel model = new SaleResModel();
             try
             {
+                _logger.LogInformation("First Line");
                 if (pageNo == 0)
                     pageNo = 1;
+                _logger.LogInformation($"Get Page No {pageNo}");
                 //int rowPerPage = 3;
                 using (var db = new SqlConnection(_configuration.GetConnectionString("DbStr")))
                 {
+                    _logger.LogInformation($"using sql connection {_configuration.GetConnectionString("DbStr")}");
+
                     string query = "select * from TblSale with (nolock) order by SaleId desc";
-                    
+
+                    _logger.LogInformation($"assign query {query}");
+
                     #region Get Total Page
                     int totalRowCount = db.Query<SaleModel>(query).Count();
                     int totalPage = 0;
@@ -62,7 +71,9 @@ namespace WebApp20220514.Server.Controllers
             {
                 model.response = getError(ex);
             }
-            Log.Information(JsonConvert.SerializeObject(model, Formatting.Indented));
+            string log = JsonConvert.SerializeObject(model, Formatting.Indented);
+            _logger.LogInformation($"return data {log}");
+            //Log.Information(log);
             return model;
         }
 
@@ -73,7 +84,7 @@ namespace WebApp20220514.Server.Controllers
             SaleResModel model = new SaleResModel();
             try
             {
-                using(var db = new SqlConnection(_configuration.GetConnectionString("DbStr")))
+                using (var db = new SqlConnection(_configuration.GetConnectionString("DbStr")))
                 {
                     string editQuery = @"select * from TblSale with (nolock) where SaleId = @SaleId";
                     var item = db.Query<SaleModel>(editQuery, new { SaleId = id }).FirstOrDefault();

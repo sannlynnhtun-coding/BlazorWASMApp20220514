@@ -6,7 +6,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
+using Serilog.Events;
+using Serilog.Sinks.MSSqlServer;
 using System;
+using System.Collections.ObjectModel;
+using System.Data;
 using System.IO;
 using System.Linq;
 
@@ -44,13 +48,27 @@ namespace WebApp20220514.Server
 
             //string filePath = "logs/WebApp20220514.Server.txt";
             string filePath = Path.Combine(configuration.GetSection("LogFolderPath").Value, "WebApp20220514.Server.txt");
+            string connectionString = configuration.GetConnectionString("DbStr");
+            var columnOptions = new ColumnOptions
+            {
+                AdditionalColumns = new Collection<SqlColumn>
+               {
+                   new SqlColumn("UserName", SqlDbType.VarChar)
+               }
+            };
+
             Log.Logger = new LoggerConfiguration()
                //.MinimumLevel.Debug()
                .WriteTo.Console()
                .WriteTo.File(filePath, rollingInterval: RollingInterval.Day)
+               .WriteTo.MSSqlServer(connectionString, sinkOptions: new MSSqlServerSinkOptions { TableName = "Log" }
+               , null, null, LogEventLevel.Information, null, columnOptions: columnOptions, null, null)
                .CreateLogger();
 
             Log.Information("Hello, Serilog!");
+            //Log.Warning("Hello, Serilog!");
+            //Log.Error("Hello, Serilog!");
+            //Log.Debug("Hello, Serilog!");
 
             if (env.IsDevelopment())
             {

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Mb+jYrumltJa47hQhNc537dl2cAxKOMk3RDLINWjC+viw2V2tVEEDIl6ZQfNTUSlaeVygIMiYGgjToL6+F90YQ==",
+  "dgSpecHash": "JUWESEu9H5/8Na98imJpUKmSnWwToyaeJReLb9A0RAd9+MGHEyO+ryy/7h/MHy6vy+m+Gym8Ffdb2t7YB73Dtw==",
   "success": true,
   "projectFilePath": "C:\\Users\\SoeLwinHtun\\Desktop\\slh\\proj\\BlazorWASMApp20220514\\WebApp20220514\\Client\\WebApp20220514.Client.csproj",
   "expectedPackageFiles": [
@@ -31,7 +31,7 @@
     "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\mudblazor\\5.2.4\\mudblazor.5.2.4.nupkg.sha512",
     "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\system.io.pipelines\\5.0.2\\system.io.pipelines.5.0.2.nupkg.sha512",
     "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\system.net.http.json\\5.0.0\\system.net.http.json.5.0.0.nupkg.sha512",
-    "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.16\\microsoft.netcore.app.runtime.browser-wasm.5.0.16.nupkg.sha512"
+    "C:\\Users\\SoeLwinHtun\\.nuget\\packages\\microsoft.netcore.app.runtime.browser-wasm\\5.0.17\\microsoft.netcore.app.runtime.browser-wasm.5.0.17.nupkg.sha512"
   ],
   "logs": []
 }
