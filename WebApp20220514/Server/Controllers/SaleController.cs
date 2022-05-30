@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using log4net;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -20,6 +21,8 @@ namespace WebApp20220514.Server.Controllers
     {
         private readonly ILogger<SaleController> _logger;
         private readonly IConfiguration _configuration;
+        private readonly ILog log4netLogger = LogManager.GetLogger(typeof(SaleController));
+
         public SaleController(IConfiguration configuration, ILogger<SaleController> logger)
         {
             _configuration = configuration;
@@ -33,18 +36,18 @@ namespace WebApp20220514.Server.Controllers
             SaleResModel model = new SaleResModel();
             try
             {
-                _logger.LogInformation("First Line");
+                log4netLogger.Info("First Line");
                 if (pageNo == 0)
                     pageNo = 1;
-                _logger.LogInformation($"Get Page No {pageNo}");
+                log4netLogger.Info($"Get Page No {pageNo}");
                 //int rowPerPage = 3;
                 using (var db = new SqlConnection(_configuration.GetConnectionString("DbStr")))
                 {
-                    _logger.LogInformation($"using sql connection {_configuration.GetConnectionString("DbStr")}");
+                    log4netLogger.Info($"using sql connection {_configuration.GetConnectionString("DbStr")}");
 
                     string query = "select * from TblSale with (nolock) order by SaleId desc";
 
-                    _logger.LogInformation($"assign query {query}");
+                    log4netLogger.Info($"assign query {query}");
 
                     #region Get Total Page
                     int totalRowCount = db.Query<SaleModel>(query).Count();
@@ -72,8 +75,8 @@ namespace WebApp20220514.Server.Controllers
                 model.response = getError(ex);
             }
             string log = JsonConvert.SerializeObject(model, Formatting.Indented);
-            _logger.LogInformation($"return data {log}");
-            //Log.Information(log);
+            log4netLogger.Info($"return data {log}");
+            //log4netLogger.Information(log);
             return model;
         }
 

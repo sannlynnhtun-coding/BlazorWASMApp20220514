@@ -121,3 +121,13 @@ public class HomeController : Controller
 
 
 https://github.com/thecodebuzz/nlog-database-logging-config-file-example/blob/master/DDL.txt
+
+https://thesoftwayfarecoder.com/integrating-log4net-and-using-adonetappender-in-asp-net-core/
+
+https://github.com/NLog/NLog/wiki/Database-target#dbprovider-examples
+
+| Log Name | Text Log | Db Log  |
+|----------|----------|---------|
+| Serilog  | Success  | Success |
+| NLog     | Success  | Fail    |
+| Log4net  | Success  | Fail    |
