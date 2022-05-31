@@ -658,3 +658,27 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+WebApp20220514/Client/bin/
+WebApp20220514/Client/obj/
+WebApp20220514/Server/bin/
+WebApp20220514/Server/obj/
+WebApp20220514/Shared/bin/
+WebApp20220514/Shared/obj/

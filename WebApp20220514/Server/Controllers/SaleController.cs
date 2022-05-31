@@ -125,6 +125,10 @@ namespace WebApp20220514.Server.Controllers
            ,@SaleDate
            ,@Country
            ,@StaffName)";
+                    if(reqModel.saleDate == default(DateTime))
+                    {
+                        reqModel.saleDate = DateTime.Now;
+                    }
                     var count = await db.ExecuteAsync(insertQuery, new
                     {
                         ProductName = reqModel.productName,

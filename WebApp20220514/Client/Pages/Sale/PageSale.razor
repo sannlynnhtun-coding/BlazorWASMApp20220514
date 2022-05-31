@@ -1,5 +1,5 @@
 ﻿@page "/sale"
-@inject HttpClient httpClient
+@*@inject HttpClient httpClient*@
 @inject IInjectService InjectService
 @*@inject NavigationManager NavigationManager*@
 @*<MudTable Items="@lst" Hover="true" SortLabel="Sort By">
@@ -78,7 +78,8 @@ else
     {
         string url = ApiUrl.Sale + "/1/10";
         url.ToConsole();
-        model = await httpClient.GetFromJsonAsync<SaleResModel>(url);
+        //model = await httpClient.GetFromJsonAsync<SaleResModel>(url);
+        model = await InjectService.ExecuteApiAsync<SaleResModel>(url, httpMethod: EnumHttpMethod.Get);
         JsonSerializer.Serialize(model).ToConsole();
         if (model != null && model.response != null && model.response.respCode == "000")
         {

@@ -18,24 +18,24 @@ namespace WebApp20220514.Server
     {
         public static void Main(string[] args)
         {
-            XmlDocument log4netConfig = new XmlDocument();
-            log4netConfig.Load(File.OpenRead("log4net.config"));
-            log4net.Config.XmlConfigurator.Configure(log4net.LogManager.GetRepository(Assembly.GetEntryAssembly()), log4netConfig["log4net"]);
+            //XmlDocument log4netConfig = new XmlDocument();
+            //log4netConfig.Load(File.OpenRead("log4net.config"));
+            //log4net.Config.XmlConfigurator.Configure(log4net.LogManager.GetRepository(Assembly.GetEntryAssembly()), log4netConfig["log4net"]);
 
             CreateHostBuilder(args).Build().Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureLogging(logging =>
-                {
-                    // clear default logging providers
-                    logging.ClearProviders();
-                    logging.AddConsole();
-                    logging.AddDebug();
-                    logging.AddEventLog();
-                    // add more providers here
-                })
+                //.ConfigureLogging(logging =>
+                //{
+                //    // clear default logging providers
+                //    logging.ClearProviders();
+                //    logging.AddConsole();
+                //    logging.AddDebug();
+                //    logging.AddEventLog();
+                //    // add more providers here
+                //})
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
