@@ -397,8 +397,5 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-/Client/bin
-/Client/obj
-
-/Server/bin
-/Server/obj
+/WebApp20220514/Client/bin
+/WebApp20220514/Client/obj
