@@ -402,3 +402,6 @@ FodyWeavers.xsd
 
 /Server/bin
 /Server/obj
+
+.vs/
+.vs/WebApp20220514/v16/.suo
