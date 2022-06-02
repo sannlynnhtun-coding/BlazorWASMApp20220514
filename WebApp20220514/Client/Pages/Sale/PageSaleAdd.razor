@@ -1,4 +1,5 @@
 ﻿@page "/sale/add"
+@page "/sale/edit/{id}"
 @*@inject NavigationManager NavigationManager*@
 @inject IInjectService InjectService
 
@@ -39,11 +40,13 @@
     </div>
 </div>
 
-
 <button class="btn btn-success" @onclick="Save">Save</button>
 <button class="btn btn-info" @onclick="Back">Back</button>
 
 @code {
+    [Parameter]
+    public string id { get; set; }
+
     string url = "api/sale";
     private SaleModel model = new SaleModel();
 
@@ -52,6 +55,16 @@
         if (firstRender)
         {
             await InjectService.DatePicker("#SaleDate");
+            bool isInt = int.TryParse(id, out int _id);
+            if (id != null && isInt)
+            {
+                var resModel = await InjectService.ExecuteApiAsync<SaleResModel>(ApiUrl.Sale + $"/{_id}", httpMethod: EnumHttpMethod.Get);
+                if (resModel.response.respCode == "000")
+                {
+                    model = resModel.itemSale;
+                    StateHasChanged();
+                }
+            }
         }
     }
 
@@ -69,8 +82,13 @@
 
     async Task Save()
     {
+        if (model.amount == 0)
+        {
+            InjectService.ShowMsg("Amount can't be zero.");
+            return;
+        }
         SaleResModel resModel = await InjectService.ExecuteApiAsync<SaleResModel>(url, model);
-        if(resModel.response.respCode == "000")
+        if (resModel.response.respCode == "000")
             InjectService.ShowMsg("Saving Successful", "/sale");
         else
             InjectService.ShowMsg("Saving Failed");

@@ -37,6 +37,9 @@ else
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
+                        <th>
+                            Action
+                        </th>
                         <th>Sr.</th>
                         <th>Product Name</th>
                         <th>Qty</th>
@@ -51,6 +54,9 @@ else
                     {
                         var item = lst[i];
                         <tr>
+                            <td>
+                                <button type="button" class="btn btn-secondary btn-sm" @onclick="() => Edit(item.saleId)">Edit</button>
+                            </td>
                             <td>@(i + 1)</td>
                             <td>@(item.productName)</td>
                             <td>@(item.price)</td>
@@ -90,5 +96,13 @@ else
     private void New()
     {
         InjectService.Go("/sale/add");
+    }
+
+    async Task Edit(int saleId)
+    {
+        SaleResModel model = await InjectService.ExecuteApiAsync<SaleResModel>(ApiUrl.Sale + $"/{saleId}", httpMethod : EnumHttpMethod.Get);
+        model.ToConsole();
+
+        InjectService.Go($"/sale/edit/{saleId}");
     }
 }
