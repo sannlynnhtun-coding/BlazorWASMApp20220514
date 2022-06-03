@@ -125,7 +125,7 @@ namespace WebApp20220514.Server.Controllers
            ,@SaleDate
            ,@Country
            ,@StaffName)";
-                    if(reqModel.saleDate == default(DateTime))
+                    if (reqModel.saleDate == default(DateTime))
                     {
                         reqModel.saleDate = DateTime.Now;
                     }
@@ -194,6 +194,14 @@ namespace WebApp20220514.Server.Controllers
             {
                 using (var db = new SqlConnection(_configuration.GetConnectionString("DbStr")))
                 {
+                    string selectQuery = @"select SaleId from TblSale with (nolock) where SaleId=@SaleId;";
+                    int isExist = db.Query<int>(selectQuery, new { SaleId = id }).FirstOrDefault();
+                    if (isExist == 0)
+                    {
+                        model.response = getError("no records found!");
+                        goto result;
+                    }
+
                     string insertQuery = @"delete from TblSale where SaleId = @SaleId";
                     var count = await db.ExecuteAsync(insertQuery, new
                     {
@@ -206,6 +214,7 @@ namespace WebApp20220514.Server.Controllers
             {
                 model.response = getError(ex);
             }
+            result:
             return model;
         }
 

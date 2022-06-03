@@ -55,7 +55,8 @@ else
                         var item = lst[i];
                         <tr>
                             <td>
-                                <button type="button" class="btn btn-secondary btn-sm" @onclick="() => Edit(item.saleId)">Edit</button>
+                                <button type="button" class="btn btn-secondary btn-sm" @onclick="() => Edit(item.saleId)"><i class="fa fa-edit"></i></button>
+                                <button type="button" class="btn btn-secondary btn-sm" @onclick="() => Delete(item.saleId)"><i class="fa fa-trash"></i></button>
                             </td>
                             <td>@(i + 1)</td>
                             <td>@(item.productName)</td>
@@ -82,6 +83,11 @@ else
 
     protected override async Task OnInitializedAsync()
     {
+        await GetList();
+    }
+
+    async Task GetList()
+    {
         string url = ApiUrl.Sale + "/1/10";
         url.ToConsole();
         //model = await httpClient.GetFromJsonAsync<SaleResModel>(url);
@@ -100,9 +106,21 @@ else
 
     async Task Edit(int saleId)
     {
-        SaleResModel model = await InjectService.ExecuteApiAsync<SaleResModel>(ApiUrl.Sale + $"/{saleId}", httpMethod : EnumHttpMethod.Get);
+        SaleResModel model = await InjectService.ExecuteApiAsync<SaleResModel>($"{ApiUrl.Sale}/{saleId}", httpMethod: EnumHttpMethod.Get);
         model.ToConsole();
 
         InjectService.Go($"/sale/edit/{saleId}");
+    }
+
+    async Task Delete(int saleId)
+    {
+        var result = await InjectService.ConfirmMessage("Confirm", "Are you sure you want to delete this record?", EnumConfirmButton.Delete);
+        $"result is {result}".ToConsole();
+        if (result)
+        {
+            SaleResModel model = await InjectService.ExecuteApiAsync<SaleResModel>($"{ApiUrl.Sale}/{saleId}", httpMethod: EnumHttpMethod.Delete);
+            model.ToConsole();
+            await GetList();
+        }
     }
 }
